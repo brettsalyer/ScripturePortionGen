@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     QList<QString> items = gen.getBooks();
     ui->bookComboBox->addItems(gen.getBooks());
+    ui->fileTypeCombo->addItems(gen.getFileTypes());
 }
 
 MainWindow::~MainWindow()
@@ -20,13 +21,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_generateButton_clicked()
 {
+    gen.setFilePath(QFileDialog::getSaveFileName(this, QObject::tr("Save File"), QObject::tr("/Documents/untitled.html"), QObject::tr("Web Page (*.html)")));
+
     QList<QString> ids = gen.getID();
+    QList<QString> headers = gen.getHeaders();
     for (int i = 0; i < ids.size(); i++){
-        gen.loadSelected(ids[i]);
+        gen.loadSelected(ids[i], headers[i]);
     }
 }
 
 void MainWindow::on_bookComboBox_currentIndexChanged(const QString &arg1)
 {
-    gen.setStarting(arg1);
+    gen.setBooks(arg1);
 }
+

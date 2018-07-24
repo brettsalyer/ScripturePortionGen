@@ -18,8 +18,7 @@ public:
 private slots:
     void on_generateButton_clicked();
 
-    void on_bookComboBox_currentIndexChanged(const QString &arg1);
-
+    void on_bookComboBox_currentIndexChanged(const QString &arg1);    
 private:
     Ui::MainWindow *ui;
 };
