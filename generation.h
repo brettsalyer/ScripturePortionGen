@@ -29,6 +29,7 @@ public:
     QList<QString> getHeaders();
     void setFilePath(QString filepath);
 
+    void minimizeReference(QString &currentLine);
 
 
 private:

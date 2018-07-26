@@ -81,6 +81,13 @@ void generation::loadSelected(QString id, QString header){
     outFile.close();
     }
 
+//Function that takes in the currently read line and chops off the book title and chapter, leaving only the verse number
+void generation::minimizeReference(QString &currentLine){
+    QList<QString> splitLine = currentLine.split(":");
+    splitLine.removeFirst();
+    currentLine = splitLine[0];
+
+}
 
 bool generation::reachedNext(QList<QString> elements){
     QList<QString> reference = elements[0].split(" ");
