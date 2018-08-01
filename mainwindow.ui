@@ -94,6 +94,9 @@
              <property name="text">
               <string>Verse by Verse</string>
              </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item>
@@ -115,16 +118,19 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
-            <widget class="QRadioButton" name="radioButton">
+            <widget class="QRadioButton" name="repeatRadio">
              <property name="text">
               <string>Repeat Chapter &amp; Verse</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="radioButton_2">
+            <widget class="QRadioButton" name="tradRadio">
              <property name="text">
               <string>Traditional (No repeat)</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
              </property>
             </widget>
            </item>

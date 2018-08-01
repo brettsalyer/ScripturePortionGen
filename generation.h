@@ -30,7 +30,8 @@ public:
     void setFilePath(QString filepath);
 
     void minimizeReference(QString &currentLine);
-
+    void setTraditional(bool);
+    bool getTraditional();
 
 private:
     //Constant lists that hold comboBox values
@@ -91,6 +92,7 @@ private:
     //Boolean value to handle if verse-by-verse, if boldUnique
     bool doVBV;
     bool doUnique;
+    bool doTraditional = true;
     QString starting;
 
 

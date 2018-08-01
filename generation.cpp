@@ -49,6 +49,9 @@ void generation::loadSelected(QString id, QString header){
                 QTextStream out(&outFile);
                 out << "<!DOCTYPE html>";
                 out << "<br><h><center><b><font size ='12.5'>" << header << " " << chapter << "</font></b></center></h><br><br>";
+                if(doTraditional){
+                    minimizeReference(line);
+                }
                 out << line << "<br>";
 
                 while(keepGoing){
@@ -62,6 +65,9 @@ void generation::loadSelected(QString id, QString header){
                             chapter++;
                             out << "<br><h><center><b><font size ='12.5'>" << header << " " << chapter << "</font></b></center></h><br><br>";
 
+                        }
+                        if(doTraditional){
+                            minimizeReference(line);
                         }
                         out << line << "<br>";
 
@@ -86,6 +92,9 @@ void generation::minimizeReference(QString &currentLine){
     QList<QString> splitLine = currentLine.split(":");
     splitLine.removeFirst();
     currentLine = splitLine[0];
+    splitLine = currentLine.split("\t");
+    splitLine.insert(1, "&nbsp");
+    currentLine = splitLine.join(" ");
 
 }
 
@@ -216,4 +225,12 @@ QList<QString> generation::getHeaders(){
 
 void generation::setFilePath(QString filepath){
     OUTPUT_FILE_PATH = filepath;
+}
+
+void generation::setTraditional(bool value){
+    doTraditional = value;
+}
+
+bool generation::getTraditional(){
+    return doTraditional;
 }

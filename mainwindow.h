@@ -19,6 +19,10 @@ private slots:
     void on_generateButton_clicked();
 
     void on_bookComboBox_currentIndexChanged(const QString &arg1);    
+    void on_tradRadio_clicked();
+
+    void on_repeatRadio_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -35,3 +35,15 @@ void MainWindow::on_bookComboBox_currentIndexChanged(const QString &arg1)
     gen.setBooks(arg1);
 }
 
+
+void MainWindow::on_tradRadio_clicked()
+{
+    gen.setTraditional(true);
+    qDebug() << gen.getTraditional();
+}
+
+void MainWindow::on_repeatRadio_clicked()
+{
+    gen.setTraditional(false);
+    qDebug() << gen.getTraditional();
+}
